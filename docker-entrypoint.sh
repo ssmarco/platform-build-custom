@@ -49,7 +49,7 @@ if [ ! -d "vendor/silverstripe/vendor-plugin" ]; then
 
     # Run custom logic
     ./tools/pre-build-archive
-    
+
     # manifest expects tar to uncompress to a folder called site - required for bc
     cd ../
     mkdir -p site
