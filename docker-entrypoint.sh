@@ -5,7 +5,7 @@ cat ~/.ssh/known_hosts
 
 if [ -d ".git" ]; then
     SHA=$(git rev-parse HEAD)
-#    rm -rf .git/
+    rm -rf .git/
 else
     echo "Unable to determine SHA, failing."
     exit 1
