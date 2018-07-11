@@ -23,7 +23,7 @@ docker run \
     --volume composer_cache:/tmp/cache \
     --volume ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
     --volume $PWD:/app \
-    silverstripe/platform-build
+    silverstripe/platform-build-custom
 ```
 
 `--volume composer_cache:/tmp/cache`
