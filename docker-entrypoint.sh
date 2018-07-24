@@ -18,9 +18,10 @@ fi
 if [[ "z${IDENT_KEY}" == "z" ]]; then
     echo "No deploy key set"
 else
-    echo "Setting up deploy key"
+    mkdir -p ~/.ssh
     echo "${IDENT_KEY}" > ~/.ssh/id_rsa
-	FINGER_PRINT=$(ssh-keygen -E md5 -lf ~/.ssh/id_rsa | awk '{ print $2 }' | cut -c 5-)
+    chmod 0600 ~/.ssh/id_rsa
+    FINGER_PRINT=$(ssh-keygen -E md5 -lf ~/.ssh/id_rsa | awk '{ print $2 }' | cut -c 5-)
     echo "Using deploy key ${FINGER_PRINT}"
 fi
 
@@ -28,7 +29,7 @@ export COMPOSER_PROCESS_TIMEOUT=1200
 
 if [ -f "composer.json" ]; then
     echo composer validate
-    composer validate
+    composer validate || true
 
     echo composer install --no-progress --no-scripts --prefer-dist --no-dev --ignore-platform-reqs --optimize-autoloader --no-interaction --no-suggest
     composer install \
