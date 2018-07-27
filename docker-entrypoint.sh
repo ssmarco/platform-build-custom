@@ -5,7 +5,6 @@ cat ~/.ssh/known_hosts
 
 if [ -d ".git" ]; then
     SHA=$(git rev-parse HEAD)
-    rm -rf .git/
 else
     echo "Unable to determine SHA, failing."
     exit 1
@@ -80,6 +79,9 @@ fi
 
 # Run custom logic
 ./tools/pre-build-archive
+
+# Remove git repository
+rm -rf .git/
 
 # manifest expects tar to uncompress to a folder called site - required for bc
 cd ../
