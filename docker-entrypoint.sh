@@ -50,6 +50,9 @@ if [ ! -d "vendor/silverstripe/vendor-plugin" ]; then
     # Run custom logic
     ./tools/pre-build-archive
 
+	# Remove git repository
+	rm -rf .git/
+	
     # manifest expects tar to uncompress to a folder called site - required for bc
     cd ../
     mkdir -p site
