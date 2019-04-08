@@ -1,7 +1,7 @@
 FROM silverstripe/platform-build:1.0.2 AS build
 
 # super locked-down to current version running in production
-FROM cheddam/silverstripe-lamp@sha256:12f1d19d156249cdd5706d9a08907ec680113fb4123f376e74917d2246f2ac42
+FROM ssmarco/php71node8x:1.0.0
 
 # run the ./tools/
 RUN mkdir -p ~/.ssh

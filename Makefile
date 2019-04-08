@@ -1,5 +1,5 @@
 all:
-	docker build . -t silverstripe/platform-build-custom:latest
+	docker build . -t silverstripe/platform-build-aa:latest
 
 push:
-	docker push silverstripe/platform-build-custom
+	docker push silverstripe/platform-build-aa
